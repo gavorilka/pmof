@@ -1,0 +1,108 @@
+"use strict";
+function validateTextarea() {
+    const errorMsg = "Не соответствует формату";
+    const textarea = this;
+    const pattern = new RegExp( textarea.getAttribute('pattern') );
+    const valueLines = textarea.value.split("\n");
+
+    valueLines.forEach(function(line) {
+        if (line.trim() === '') {
+            return true; // Пропускаем пустые строки
+        }
+        let hasError = !line.match(pattern);
+        if (typeof textarea.setCustomValidity === 'function') {
+            textarea.setCustomValidity(hasError ? errorMsg : '');
+        } else {
+            if (hasError) {
+                textarea.setAttribute('title', errorMsg);
+            } else {
+                textarea.removeAttribute('title');
+            }
+        }
+        return !hasError;
+    });
+}
+function formatPhone ()  {
+    let phone = this.value
+    const x = phone.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/)
+    if (x[1] === '7' || x[1] === '8') {
+        x[1] = '+7'
+    } else {
+        x[2] = x[1]
+        x[1] = '+7'
+    }
+    phone = !x[3]
+        ? x[1] + ' (' + x[2]
+        : x[1] + ' (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '')
+    this.value = phone
+}
+function declOfNum(number, titles) {
+    const cases = [2, 0, 1, 1, 1, 2]
+    return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[Math.min(number % 10, 5)]]
+}
+function addZero(number) {
+    if(number<10) {
+        return '0'+number
+    } else {
+        return number
+    }
+}
+function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
+    const targetDateTime = new Date(targetDate).getTime();
+    const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const timeDifference = targetDateTime - now;
+
+        if (timeDifference <= 0) {
+            clearInterval(timer);
+            console.log('Указанной дата прошла');
+            hiddenBlock.classList.remove("d-none")
+            showBlock.classList.add("d-none")
+        } else {
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+            showBlock.innerHTML = `<div>
+                <div class="text-center fw-bold text-success">До трансляции</div>
+                <div class="text-center fw-bold text-success">${days} ${declOfNum(days, ['день', 'дня', 'дней'])} ${addZero(hours)}:${addZero(minutes)}:${addZero(seconds)}</div>
+            </div>`
+
+            /*
+            <div class="text-center fw-bold text-success">${days} ${declOfNum(days, ['день', 'дня', 'дней'])} ${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} ${minutes} ${declOfNum(minutes, ['минута', 'минуты', 'минут'])} ${seconds} ${declOfNum(seconds, ['секунда', 'секунды', 'секунд'])}</div>
+            */
+
+            // const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+            // const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            // const seconds = Math.floor((timeDifference % (1000 * 60) / 1000));
+            // showBlock.innerHTML = `<div>
+            //     <div class="text-center fw-bold text-success">До трансляции</div>
+            //     <div class="text-center fw-bold text-success">${addZero(hours)}:${addZero(minutes)}:${addZero(seconds)}</div>
+            // </div>`
+            console.log(`До указанной даты осталось: ${days} ${declOfNum(days, ['день', 'дня', 'дней'])}, ${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])}, ${minutes} ${declOfNum(minutes, ['минута', 'минуты', 'минут'])}, ${seconds} ${declOfNum(seconds, ['секунда', 'секунды', 'секунд'])}`);
+        }
+    }, 1000); // обновление каждую секунду
+}
+
+(()=> {
+    const targetDate = '2024-03-27T10:00:00';
+//const targetDate = '2024-02-22T00:50:00';
+    const showBlock = document.querySelector(".timer");
+    const hiddenBlock = document.querySelector(".broadcast-media");
+    countdownToDateTime(targetDate,showBlock,hiddenBlock);
+    document.querySelector("#phone").addEventListener('keyup',formatPhone);
+    document.querySelector("#questionText").addEventListener('keyup',validateTextarea);
+})();
+(() => {
+const forms = document.querySelectorAll('.needs-validation')
+Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+    }, false)
+})
+})();
