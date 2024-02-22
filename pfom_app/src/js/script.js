@@ -65,21 +65,14 @@ function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
             const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
             showBlock.innerHTML = `<div>
                 <div class="text-center fw-bold text-success">До трансляции</div>
-                <div class="text-center fw-bold text-success">${days} ${declOfNum(days, ['день', 'дня', 'дней'])} ${addZero(hours)}:${addZero(minutes)}:${addZero(seconds)}</div>
+                <div class="text-center fw-bold">
+                    <span class="text-success text-nowrap">${days} ${declOfNum(days, ['день', 'дня', 'дней'])} </span>
+                    <span class="text-success text-nowrap">${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} </span>
+                    <span class="text-success text-nowrap">${minutes} ${declOfNum(minutes, ['минута', 'минуты', 'минут'])} </span>
+                    <span class="text-success text-nowrap">${seconds} ${declOfNum(seconds, ['секунда', 'секунды', 'секунд'])} </span>
+                </div>
             </div>`
 
-            /*
-            <div class="text-center fw-bold text-success">${days} ${declOfNum(days, ['день', 'дня', 'дней'])} ${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])} ${minutes} ${declOfNum(minutes, ['минута', 'минуты', 'минут'])} ${seconds} ${declOfNum(seconds, ['секунда', 'секунды', 'секунд'])}</div>
-            */
-
-            // const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-            // const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            // const seconds = Math.floor((timeDifference % (1000 * 60) / 1000));
-            // showBlock.innerHTML = `<div>
-            //     <div class="text-center fw-bold text-success">До трансляции</div>
-            //     <div class="text-center fw-bold text-success">${addZero(hours)}:${addZero(minutes)}:${addZero(seconds)}</div>
-            // </div>`
-            console.log(`До указанной даты осталось: ${days} ${declOfNum(days, ['день', 'дня', 'дней'])}, ${hours} ${declOfNum(hours, ['час', 'часа', 'часов'])}, ${minutes} ${declOfNum(minutes, ['минута', 'минуты', 'минут'])}, ${seconds} ${declOfNum(seconds, ['секунда', 'секунды', 'секунд'])}`);
         }
     }, 1000); // обновление каждую секунду
 }

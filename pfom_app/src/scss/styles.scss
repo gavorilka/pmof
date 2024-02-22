@@ -1,4 +1,5 @@
 @import "bootstrap-conf";
+
 .header{
   .logo {
     height: 100px;
@@ -9,6 +10,7 @@
   }
 }
 .main {
+  position: relative;
   * {
     color: $primary;
   }
@@ -30,7 +32,58 @@
     justify-content: center;
     align-items: center;
     div {
-      font-size: 2em;
+      font-size: calc(1.5em + 1vw);
+    }
+    @media (min-width: 992px) {
+      &{
+        position: relative;
+      }
+      &::before {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        transform: rotate(-5deg);
+        width: 200px;
+        height: 200px;
+        background-image: url('/ovl.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      &::after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background-image: url('/ring.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     }
   }
+  &::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/piter.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+  }
+}
+.footer {
+  *{
+    color: $light;
+  }
+  padding: 10px;
+  height: 300px;
+  background: $primary;
 }
