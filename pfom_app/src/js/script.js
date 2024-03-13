@@ -57,7 +57,12 @@ function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
             clearInterval(timer);
             console.log('Указанной дата прошла');
             hiddenBlock.classList.remove("d-none")
+            hiddenBlock.parentNode.classList.add('broadcast-with-video')
             showBlock.classList.add("d-none")
+            if (hiddenBlock.src.startsWith('https://www.youtube.com')) {
+                    const lastLink = hiddenBlock.src.match('(?<=embed\\/)(.+)')
+                    hiddenBlock.src += `?playlist=${lastLink}&autoplay=1&mute=0&loop=1`
+            }
         } else {
             const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
             const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -74,18 +79,19 @@ function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
             </div>`
 
         }
-    }, 1000); // обновление каждую секунду
+    }, 1000);
 }
 
 (()=> {
-    const targetDate = '2024-03-27T10:00:00';
-//const targetDate = '2024-02-22T00:50:00';
+    //const targetDate = '2024-03-27T10:00:00';
+    const targetDate = '2024-03-13T19:43:00';
     const showBlock = document.querySelector(".timer");
     const hiddenBlock = document.querySelector(".broadcast-media");
     countdownToDateTime(targetDate,showBlock,hiddenBlock);
     document.querySelector("#phone").addEventListener('keyup',formatPhone);
     document.querySelector("#questionText").addEventListener('keyup',validateTextarea);
 })();
+
 (() => {
 const forms = document.querySelectorAll('.needs-validation')
 Array.from(forms).forEach(form => {

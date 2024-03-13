@@ -5,19 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/logoPfom.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Трансляция ПФОМ</title>
+    <script type="module" crossorigin src="/assets/index-DWZQYT1B.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DReglBwl.css">
   </head>
   <body>
     <header class="header navbar navbar-expand-lg navbar-dark bg-primary">
         <nav class="container mb-3 mt-3">
-            <div class="logo-container d-flex">
+            <div class="logo-container">
                 <a class="navbar-brand" href="https://www.eduforum.spb.ru" target="_blank">
                     <img src="/logoPfom.svg" class="img-fluid logo" alt="Петербургский международный образовательный форум">
                 </a>
-                <a class="navbar-brand d-none d-sm-block" href="https://xn--2024-u4d6b7a9f1a.xn--p1ai" target="_blank">
-                    <img src="/logoYearFamily.svg" class="img-fluid logo" alt="Год семьи">
-                </a>
                 <a class="navbar-brand" href="https://licey369.ru/" target="_blank">
-                    <img src="/logoBlue.svg" class="img-fluid logo" alt="Лицей № 369">
+                    <img src="/logoBlue.svg" class="img-fluid logo" alt="Лицей 369">
                 </a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,76 +61,10 @@
                                 <label for="questionFio" class="form-label">ФИО</label>
                                 <input type="text" class="form-control" id="questionFio" placeholder="Иванов Иван Иванович" pattern="^[А-ЯЁ][а-яё]{1,}\s[А-ЯЁ][а-яё]{1,}(\s[А-ЯЁ][а-яё]{1,})?$" required>
                             </div>
-
                             <div class="mb-3">
-                                <label for="questionEmail" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="questionEmail" placeholder="mail@example.ru" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="questionOrganization" class="form-label">Организация</label>
-                                <input type="text" class="form-control" id="questionOrganization" placeholder="Лицей № 369">
-                            </div>
-                            <div class="mb-3">
-                                <label for="questionFunction" class="form-label">Должность</label>
-                                <input type="text" class="form-control" id="questionFunction" placeholder="Директор">
-                            </div>
-                            <div class="mb-3">
-                                <label for="questionCity" class="form-label">Город</label>
-                                <input type="text" class="form-control" id="questionCity" placeholder="Санкт-Петербург">
-                            </div>
-                            <div class="mb-3">
-                                <label for="questionText" class="form-label">Вопрос</label>
-                                <textarea class="form-control" id="questionText" rows="3" pattern="^[А-Яа-яЁё\s\d.,!?:;\-&quot;&apos;&laquo;&raquo;()/\\]+$" placeholder="Вопрос состоит из кириллического текста со знаками препинания и арабскими цифрами" required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary" type="submit">Отправить</button>
-                            </div>
-                        </form>
-                    </div>
-<!--                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                        <button type="button" class="btn btn-primary">Задать</button>
-                    </div>-->
-                </div>
-            </div>
-        </div>
-        <div class="modal fade regModal" id="regModal" tabindex="-1" aria-labelledby="regModal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title fs-5" id="regModalLabel">Регистрация</h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="row g-3 needs-validation registration" novalidate>
-                            <div class="mb-3">
-                                <label for="soname" class="form-label">Фамилия</label>
-                                <input type="text" class="form-control" id="soname" placeholder="Иванов" pattern="^[А-ЯЁ][а-яё]{1,}$" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="soname" class="form-label">Имя</label>
-                                <input type="text" class="form-control" id="name" placeholder="Иван" pattern="^[А-ЯЁ][а-яё]{1,}$" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="patronymic" class="form-label">Отчество</label>
-                                <input type="text" class="form-control" id="patronymic" placeholder="Иванович" pattern="^[А-ЯЁ][а-яё]{1,}$">
-                            </div>
-                            <div class="mb-3">
-                                <label for="organization" class="form-label">Организация</label>
-                                <input type="text" class="form-control" id="organization" placeholder="Лицей № 369">
-                            </div>
-                            <div class="mb-3">
-                                <label for="function" class="form-label">Должность</label>
-                                <input type="text" class="form-control" id="function" placeholder="Директор">
-                            </div>
-                            <div class="mb-3">
-                                <label for="country" class="form-label">Страна</label>
-                                <input type="text" class="form-control" id="country" placeholder="Россия">
-                            </div>
-                            <div class="mb-3">
-                                <label for="region" class="form-label">Регион</label>
-                                <select class="form-select" id="region" required>
-                                    <option selected disabled value="">Выберите регион</option>
+                                <label for="questionRegion" class="form-label">Регион</label>
+                                <select class="form-select" id="questionRegion" required>
+                                    <option selected disabled value="">Выбери</option>
                                     <option value="Алтайский край">Алтайский край</option>
                                     <option value="Амурская область">Амурская область</option>
                                     <option value="Архангельская область">Архангельская область</option>
@@ -224,8 +157,140 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="city" class="form-label">Город</label>
-                                <input type="text" class="form-control" id="city" placeholder="Санкт-Петербург">
+                                <label for="questionEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="questionEmail" placeholder="mail@example.ru" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="questionText" class="form-label">Вопрос</label>
+                                <textarea class="form-control" id="questionText" rows="3" pattern="^[А-Яа-яЁё\s\d.,!?:;\-&quot;&apos;&laquo;&raquo;()/\\]+$" placeholder="Вопрос состоит из кириллического текста со знаками препинания и арабскими цифрами" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+<!--                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                        <button type="button" class="btn btn-primary">Задать</button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        <div class="modal fade regModal" id="regModal" tabindex="-1" aria-labelledby="regModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5" id="regModalLabel">Регистрация</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3 needs-validation registration" novalidate>
+                            <div class="mb-3">
+                                <label for="soname" class="form-label">Фамилия</label>
+                                <input type="text" class="form-control" id="soname" placeholder="Иванов" pattern="^[А-ЯЁ][а-яё]{1,}$" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="soname" class="form-label">Имя</label>
+                                <input type="text" class="form-control" id="name" placeholder="Иван" pattern="^[А-ЯЁ][а-яё]{1,}$" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="patronymic" class="form-label">Отчество</label>
+                                <input type="text" class="form-control" id="patronymic" placeholder="Иванович" pattern="^[А-ЯЁ][а-яё]{1,}$">
+                            </div>
+                            <div class="mb-3">
+                                <label for="region" class="form-label">Регион</label>
+                                <select class="form-select" id="region" required>
+                                    <option selected disabled value="">Выбери</option>
+                                    <option value="Алтайский край">Алтайский край</option>
+                                    <option value="Амурская область">Амурская область</option>
+                                    <option value="Архангельская область">Архангельская область</option>
+                                    <option value="Астраханская область">Астраханская область</option>
+                                    <option value="Белгородская область">Белгородская область</option>
+                                    <option value="Брянская область">Брянская область</option>
+                                    <option value="Владимирская область">Владимирская область</option>
+                                    <option value="Волгоградская область">Волгоградская область</option>
+                                    <option value="Вологодская область">Вологодская область</option>
+                                    <option value="Воронежская область">Воронежская область</option>
+                                    <option value="Донецкая Народная Республика">Донецкая Народная Республика</option>
+                                    <option value="Еврейская АО">Еврейская АО</option>
+                                    <option value="Забайкальский край">Забайкальский край</option>
+                                    <option value="Запорожская область">Запорожская область</option>
+                                    <option value="Ивановская область">Ивановская область</option>
+                                    <option value="Иркутская область">Иркутская область</option>
+                                    <option value="Кабардино-Балкарская Республика">Кабардино-Балкарская Республика</option>
+                                    <option value="Калининградская область">Калининградская область</option>
+                                    <option value="Калужская область">Калужская область</option>
+                                    <option value="Камчатский край">Камчатский край</option>
+                                    <option value="Карачаево-Черкесская Республика">Карачаево-Черкесская Республика</option>
+                                    <option value="Кемеровская область — Кузбасс">Кемеровская область — Кузбасс</option>
+                                    <option value="Кировская область">Кировская область</option>
+                                    <option value="Костромская область">Костромская область</option>
+                                    <option value="Краснодарский край">Краснодарский край</option>
+                                    <option value="Красноярский край">Красноярский край</option>
+                                    <option value="Курганская область">Курганская область</option>
+                                    <option value="Курская область">Курская область</option>
+                                    <option value="Ленинградская область">Ленинградская область</option>
+                                    <option value="Липецкая область">Липецкая область</option>
+                                    <option value="Луганская Народная Республика">Луганская Народная Республика</option>
+                                    <option value="Магаданская область">Магаданская область</option>
+                                    <option value="Москва">Москва</option>
+                                    <option value="Московская область">Московская область</option>
+                                    <option value="Мурманская область">Мурманская область</option>
+                                    <option value="Ненецкий АО">Ненецкий АО</option>
+                                    <option value="Нижегородская область">Нижегородская область</option>
+                                    <option value="Новгородская область">Новгородская область</option>
+                                    <option value="Новосибирская область">Новосибирская область</option>
+                                    <option value="Омская область">Омская область</option>
+                                    <option value="Оренбургская область">Оренбургская область</option>
+                                    <option value="Орловская область">Орловская область</option>
+                                    <option value="Пензенская область">Пензенская область</option>
+                                    <option value="Пермский край">Пермский край</option>
+                                    <option value="Приморский край">Приморский край</option>
+                                    <option value="Псковская область">Псковская область</option>
+                                    <option value="Республика Адыгея">Республика Адыгея</option>
+                                    <option value="Республика Алтай">Республика Алтай</option>
+                                    <option value="Республика Башкортостан">Республика Башкортостан</option>
+                                    <option value="Республика Бурятия">Республика Бурятия</option>
+                                    <option value="Республика Дагестан">Республика Дагестан</option>
+                                    <option value="Республика Ингушетия">Республика Ингушетия</option>
+                                    <option value="Республика Калмыкия">Республика Калмыкия</option>
+                                    <option value="Республика Карелия">Республика Карелия</option>
+                                    <option value="Республика Коми">Республика Коми</option>
+                                    <option value="Республика Крым">Республика Крым</option>
+                                    <option value="Республика Марий Эл">Республика Марий Эл</option>
+                                    <option value="Республика Мордовия">Республика Мордовия</option>
+                                    <option value="Республика Саха (Якутия)">Республика Саха (Якутия)</option>
+                                    <option value="Республика Северная Осетия — Алания">Республика Северная Осетия — Алания</option>
+                                    <option value="Республика Татарстан">Республика Татарстан</option>
+                                    <option value="Республика Тыва">Республика Тыва</option>
+                                    <option value="Республика Хакасия">Республика Хакасия</option>
+                                    <option value="Ростовская область">Ростовская область</option>
+                                    <option value="Рязанская область">Рязанская область</option>
+                                    <option value="Самарская область">Самарская область</option>
+                                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                                    <option value="Саратовская область">Саратовская область</option>
+                                    <option value="Сахалинская область">Сахалинская область</option>
+                                    <option value="Свердловская область">Свердловская область</option>
+                                    <option value="Севастополь">Севастополь</option>
+                                    <option value="Смоленская область">Смоленская область</option>
+                                    <option value="Ставропольский край">Ставропольский край</option>
+                                    <option value="Тамбовская область">Тамбовская область</option>
+                                    <option value="Тверская область">Тверская область</option>
+                                    <option value="Томская область">Томская область</option>
+                                    <option value="Тульская область">Тульская область</option>
+                                    <option value="Тюменская область">Тюменская область</option>
+                                    <option value="Удмуртская Республика">Удмуртская Республика</option>
+                                    <option value="Ульяновская область">Ульяновская область</option>
+                                    <option value="Хабаровский край">Хабаровский край</option>
+                                    <option value="Ханты-Мансийский АО — Югра">Ханты-Мансийский АО — Югра</option>
+                                    <option value="Херсонская область">Херсонская область</option>
+                                    <option value="Челябинская область">Челябинская область</option>
+                                    <option value="Чеченская Республика">Чеченская Республика</option>
+                                    <option value="Чувашская Республика — Чувашия">Чувашская Республика — Чувашия</option>
+                                    <option value="Чукотский АО">Чукотский АО</option>
+                                    <option value="Ямало-Ненецкий АО">Ямало-Ненецкий АО</option>
+                                    <option value="Ярославская область">Ярославская область</option>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
@@ -233,7 +298,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Телефон</label>
-                                <input type="tel" class="form-control" id="phone" required placeholder="+7 (880) 555 35 35" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
+                                <input type="tel" class="form-control" id="phone" placeholder="+7 (880) 555 35 35" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$">
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
@@ -245,12 +310,29 @@
         </div>
     </header>
     <main class="main container mt-5 mb-5">
-        <section class="title-section">
-            <h1 class="text-center mb-5">
-                <div>Открытая международная</div>
-                <div>научно&#8209;практическая стрим&#8209;конференция</div>
-                <div>«Пять новелл петербургского образования. #PROЛицей»</div>
-            </h1>
+        <section class="card mb-5">
+            <div class="row g-0">
+                <div class="col-lg-8 col-md-6">
+                    <div class="card-body">
+                        <h1 class="card-title">Дорогие ребята!</h1>
+                        <p class="card-text">
+                            Пусть не обижает вас обращение "ребята", даже если вам "немного за 30", ведь мы приглашаем вас посетить школьную страничку и погрузиться в яркий, красочный, многоликий мир детства Лицея № 369.
+                        </p>
+                        <p class="card-text">
+                            Мы предлагаем вам познакомиться с жизнью коллектива, история которого исчисляется не одним десятком лет. Было все - взлеты и падения, слезы радости и горечь неудач, но всегда каждый из нас думал о том, что не имеет права на слабость отступления и продолжал идти вперед. "Дорогу осилит идущий" - вот девиз тех, кто посвятил часть своей жизни 369-й школе.
+                        </p>
+                        <p class="card-text">
+                            На сегодняшний день наш лицей является одним из лидеров системы образования Санкт-Петербурга. Ставя перед собой новые задачи, коллектив лицея уверенно их решает.
+                        </p>
+                        <p class="card-text d-flex">
+                            <small class="ms-auto text-body-info text-info fw-bold">Директор Лицея №369 Тхостов Константин Эдуардович</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 d-flex align-items-lg-end align-items-md-center">
+                    <img class="img-fluid" src="/director.webp" alt="Тхостов Константин Эдуардович">
+                </div>
+            </div>
         </section>
         <section class="broadcast">
             <iframe
@@ -279,6 +361,5 @@
             <span class="text-nowrap">&copy; 2024 Director Lyceum 369 Thostov Konstantin</span> <span class="text-nowrap">developed by Gavrilov Ivan</span>
         </div>
     </footer>
-    <script type="module" src="js/main.js"></script>
   </body>
 </html>
