@@ -57,7 +57,7 @@ function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
             clearInterval(timer);
             console.log('Указанной дата прошла');
             hiddenBlock.classList.remove("d-none")
-            hiddenBlock.parentNode.classList.add('broadcast-with-video')
+            hiddenBlock.parentNode.classList.add('broadcast-with-video','mt-5')
             showBlock.classList.add("d-none")
             if (hiddenBlock.src.startsWith('https://www.youtube.com')) {
                     const lastLink = hiddenBlock.src.match('(?<=embed\\/)(.+)')
@@ -83,8 +83,8 @@ function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
 }
 
 (()=> {
-    //const targetDate = '2024-03-27T10:00:00';
-    const targetDate = '2024-03-13T19:43:00';
+    const targetDate = '2024-03-27T10:00:00';
+    //const targetDate = '2024-03-13T20:19:00';
     const showBlock = document.querySelector(".timer");
     const hiddenBlock = document.querySelector(".broadcast-media");
     countdownToDateTime(targetDate,showBlock,hiddenBlock);
