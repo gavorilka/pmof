@@ -10,11 +10,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/grid';
 
 let dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
-let dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+dropdownElementList.map(function (dropdownToggleEl) {
     return new bootstrap.Dropdown(dropdownToggleEl);
 });
 
-const swiper = new Swiper(".partnerSwiper", {
+new Swiper(".partnerSwiper", {
     modules: [ Autoplay ,Grid, Pagination],
     loop: true,
     autoplay: {

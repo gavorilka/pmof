@@ -1,51 +1,7 @@
 "use strict";
-function validateTextarea() {
-    const errorMsg = "Не соответствует формату";
-    const textarea = this;
-    const pattern = new RegExp( textarea.getAttribute('pattern') );
-    const valueLines = textarea.value.split("\n");
-
-    valueLines.forEach(function(line) {
-        if (line.trim() === '') {
-            return true; // Пропускаем пустые строки
-        }
-        let hasError = !line.match(pattern);
-        if (typeof textarea.setCustomValidity === 'function') {
-            textarea.setCustomValidity(hasError ? errorMsg : '');
-        } else {
-            if (hasError) {
-                textarea.setAttribute('title', errorMsg);
-            } else {
-                textarea.removeAttribute('title');
-            }
-        }
-        return !hasError;
-    });
-}
-function formatPhone ()  {
-    let phone = this.value
-    const x = phone.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/)
-    if (x[1] === '7' || x[1] === '8') {
-        x[1] = '+7'
-    } else {
-        x[2] = x[1]
-        x[1] = '+7'
-    }
-    phone = !x[3]
-        ? x[1] + ' (' + x[2]
-        : x[1] + ' (' + x[2] + ') ' + x[3] + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '')
-    this.value = phone
-}
 function declOfNum(number, titles) {
     const cases = [2, 0, 1, 1, 1, 2]
     return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[Math.min(number % 10, 5)]]
-}
-function addZero(number) {
-    if(number<10) {
-        return '0'+number
-    } else {
-        return number
-    }
 }
 function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
     const targetDateTime = new Date(targetDate).getTime();
@@ -88,8 +44,6 @@ function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
     const showBlock = document.querySelector(".timer");
     const hiddenBlock = document.querySelector(".broadcast-media");
     countdownToDateTime(targetDate,showBlock,hiddenBlock);
-    document.querySelector("#phone").addEventListener('keyup',formatPhone);
-    document.querySelector("#questionText").addEventListener('keyup',validateTextarea);
 })();
 
 (() => {
