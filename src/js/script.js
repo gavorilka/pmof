@@ -41,9 +41,12 @@ function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
 (()=> {
     const targetDate = '2024-03-27T10:00:00';
     //const targetDate = '2024-03-13T20:19:00';
-    const showBlock = document.querySelector(".timer");
-    const hiddenBlock = document.querySelector(".broadcast-media");
-    countdownToDateTime(targetDate,showBlock,hiddenBlock);
+    const urlPath = window.location.pathname
+    if (urlPath == '/' || urlPath == ''){
+        const showBlock = document.querySelector(".timer");
+        const hiddenBlock = document.querySelector(".broadcast-media");
+        countdownToDateTime(targetDate,showBlock,hiddenBlock);
+    }
 })();
 
 (() => {
