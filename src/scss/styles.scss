@@ -160,3 +160,22 @@
     }
   }
 }
+.table#program{
+  * {
+    background: rgba(0,0,0,0);
+    color: $primary;
+  }
+  thead {
+   th {
+    color: $success;
+   }
+ }
+  @media (min-width: 576px) {
+    .first-col {
+      width: 105px;
+    }
+    .sm-offset-col {
+      display: table-cell;
+    }
+  }
+}
