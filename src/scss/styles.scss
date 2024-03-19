@@ -179,3 +179,8 @@
     }
   }
 }
+.hover-success:hover, .hover-success:active {
+  color: $success !important;
+  border-color: $success !important;
+  background: transparent !important;
+}
