@@ -54,18 +54,24 @@
       }
     }
   }
-  .broadcast {
+  .broadcast,
+  .promo {
     width: 100%;
-  }
-  .broadcast-with-video {
-    height: clamp(45vw,5vh, 30vw);
   }
   .broadcast-media,
-  .timer {
-    width: 100%;
-    height: 100%;
+  .timer,
+  .promo-media {
+   width: 100%;
+   height: 100%;
   }
-  .broadcast-media {
+  .broadcast-with-video,
+  .promo-media
+  {
+    height: clamp(45vw, 5vh, 30vw);
+  }
+  .broadcast-media,
+  .promo-media
+  {
     object-fit: cover;
     overflow: hidden;
   }

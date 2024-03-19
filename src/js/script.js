@@ -17,7 +17,7 @@ function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
             showBlock.classList.add("d-none")
             if (hiddenBlock.src.startsWith('https://www.youtube.com')) {
                     const lastLink = hiddenBlock.src.match('(?<=embed\\/)(.+)')
-                    hiddenBlock.src += `?playlist=${lastLink}&autoplay=1&mute=0&loop=1`
+                    hiddenBlock.src += `?playlist=${lastLink}&autoplay=1&mute=1&loop=1`
             }
         } else {
             const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
