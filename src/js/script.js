@@ -38,14 +38,25 @@ function countdownToDateTime(targetDate, showBlock, hiddenBlock) {
     }, 1000);
 }
 
+function removeBlock(targetDate, removedBlock){
+    const targetDateTime = new Date(targetDate).getTime()
+    const now = new Date().getTime()
+    const timeDifference = targetDateTime - now
+    if (timeDifference <= 0) {
+        removedBlock.remove()
+    }
+}
+
 (()=> {
     const targetDate = '2024-03-27T10:00:00';
-    //const targetDate = '2024-03-13T20:19:00';
+    //const targetDate = '2024-03-19T16:06:00';
     const urlPath = window.location.pathname
     if (urlPath == '/' || urlPath == ''){
-        const showBlock = document.querySelector(".timer");
-        const hiddenBlock = document.querySelector(".broadcast-media");
-        countdownToDateTime(targetDate,showBlock,hiddenBlock);
+        const showBlock = document.querySelector(".timer")
+        const hiddenBlock = document.querySelector(".broadcast-media")
+        const removedBlock = document.querySelector(".promo")
+        countdownToDateTime(targetDate,showBlock,hiddenBlock)
+        removeBlock('2024-03-27T00:00:01', removedBlock)
     }
 })();
 
