@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 $font-family-base: "Open Sans", sans-serif;
 $primary: rgb(37,83,155);
-$info: rgb(108,158,218);
+$info: rgb(108, 158, 218);
 $warning: rgb(251,174,23);
 $success: rgb(0,176,155);
 $danger: rgb(242,111,33);
 $secondary: rgb(213,214,213);
+
+$accordion-bg: transparent;
+$accordion-icon-color: $success;
+$accordion-button-color: $success;
+
+$accordion-icon-active-color: $danger;
+$accordion-button-active-color: $danger;
+$accordion-button-active-bg: rgba(242, 111, 33, 0.1);
