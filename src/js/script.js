@@ -46,17 +46,29 @@ function removeBlock(targetDate, removedBlock){
         removedBlock.remove()
     }
 }
+function showBlock(targetDate, showedBlock){
+    const targetDateTime = new Date(targetDate).getTime()
+    const now = new Date().getTime()
+    const timeDifference = targetDateTime - now
+    if (timeDifference <= 0) {
+        showedBlock.classList.remove("d-none")
+    }
+}
 
 (()=> {
     const targetDate = '2024-03-27T10:00:00';
     //const targetDate = '2024-03-19T16:06:00';
     const urlPath = window.location.pathname
     if (urlPath == '/' || urlPath == ''){
-        const showBlock = document.querySelector(".timer")
+        const showedBlock = document.querySelector(".timer")
         const hiddenBlock = document.querySelector(".broadcast-media")
         const removedBlock = document.querySelector(".promo")
-        countdownToDateTime(targetDate,showBlock,hiddenBlock)
+        countdownToDateTime(targetDate,showedBlock,hiddenBlock)
         removeBlock('2024-03-27T00:00:01', removedBlock)
+    }
+    if(urlPath =='/pro_lesson.html' || urlPath =='/pro_lesson'){
+        const showedBlock = document.querySelector("#accordionLesson")
+        showBlock('2024-03-27T11:00:00', showedBlock)
     }
 })();
 
