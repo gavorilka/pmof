@@ -202,3 +202,10 @@
     }
   }
 }
+.video-right {
+  @media (max-width: 992px) {
+    & {
+      height: 40vw;
+    }
+  }
+}
