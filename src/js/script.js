@@ -56,7 +56,7 @@ function showBlock(targetDate, showedBlock){
 }
 
 (()=> {
-    const targetDate = '2024-03-27T10:00:00';
+    const targetDate = '2024-03-27T09:30:00';
     //const targetDate = '2024-03-19T16:06:00';
     const urlPath = window.location.pathname
     if (urlPath == '/' || urlPath == ''){
